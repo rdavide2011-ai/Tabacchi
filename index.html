@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tabaccheria Di Sala Al Barro</title>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -105,12 +104,12 @@
 
     .nav-menu {
       display: flex;
-      gap: 20px;
+      gap: 14px;
       list-style: none;
     }
 
     .nav-menu a {
-      font-size: 0.76rem;
+      font-size: 0.68rem;
       font-weight: 500;
       color: var(--grigio-ch);
       text-decoration: none;
@@ -228,11 +227,19 @@
       pointer-events: none;
     }
 
-    .hero-content {
+    .hero-layout {
       position: relative;
       z-index: 1;
-      max-width: 780px;
+      display: grid;
+      grid-template-columns: 1fr 0.95fr;
+      align-items: center;
+      gap: 48px;
+      width: 100%;
       animation: fadeUp 0.8s ease both;
+    }
+
+    .hero-content {
+      max-width: 640px;
     }
 
     .hero-eyebrow {
@@ -286,10 +293,10 @@
 
     .hero-info-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: 1fr;
       gap: 14px;
       margin-bottom: 36px;
-      max-width: 760px;
+      max-width: 520px;
     }
 
     .hero-info-card {
@@ -333,6 +340,54 @@
       font-size: 0.88rem;
       font-weight: 600;
       line-height: 1.35;
+    }
+
+    .hero-photo-wrap {
+      position: relative;
+      width: 100%;
+    }
+
+    .hero-photo-card {
+      position: relative;
+      width: 100%;
+      background: rgba(255,255,255,0.06);
+      border: 2px solid var(--oro);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 20px 55px rgba(0,0,0,0.32);
+      padding: 6px;
+    }
+
+    .hero-photo-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 22px;
+    }
+
+    .hero-photo-label {
+      position: absolute;
+      left: 22px;
+      bottom: 22px;
+      background: rgba(26,42,74,0.86);
+      color: var(--bianco);
+      border: 1px solid rgba(201,168,76,0.45);
+      border-radius: 100px;
+      padding: 9px 16px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-photo-glow {
+      position: absolute;
+      inset: -14px;
+      border-radius: 34px;
+      background: linear-gradient(135deg, rgba(201,168,76,0.26), transparent 60%);
+      z-index: -1;
+      filter: blur(8px);
+      opacity: 0.75;
     }
 
     .hero-btns {
@@ -420,6 +475,111 @@
 
     .section-header {
       margin-bottom: 56px;
+    }
+
+    #chi-siamo {
+      background: var(--avorio);
+    }
+
+    .chi-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .chi-card {
+      background: var(--bianco);
+      border-radius: var(--radius);
+      padding: 38px 34px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--beige);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .chi-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: var(--oro);
+    }
+
+    .chi-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.55rem;
+      color: var(--blu);
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+
+    .chi-card p {
+      color: var(--grigio);
+      font-size: 0.96rem;
+      margin-bottom: 14px;
+    }
+
+    .chi-note {
+      margin-top: 20px;
+      padding: 14px 16px;
+      border-radius: 10px;
+      background: rgba(201,168,76,0.10);
+      border: 1px solid rgba(201,168,76,0.24);
+      color: var(--blu);
+      font-size: 0.86rem;
+      font-weight: 500;
+    }
+
+    .chi-info-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .chi-info-box {
+      background: var(--bianco);
+      border-radius: var(--radius);
+      padding: 24px 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--beige);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      transition: transform var(--trans), box-shadow var(--trans);
+    }
+
+    .chi-info-box:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .chi-info-icon {
+      width: 46px;
+      height: 46px;
+      background: linear-gradient(135deg, var(--blu), var(--blu-medio));
+      color: var(--oro);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      flex-shrink: 0;
+    }
+
+    .chi-info-box h4 {
+      color: var(--blu);
+      font-size: 1rem;
+      margin-bottom: 5px;
+      font-weight: 700;
+    }
+
+    .chi-info-box p {
+      color: var(--grigio);
+      font-size: 0.86rem;
+      line-height: 1.55;
     }
 
     #servizi {
@@ -1078,26 +1238,27 @@
       transition-delay: 0.40s;
     }
 
-    @media (max-width: 1050px) {
+    @media (max-width: 1100px) {
       .nav-menu {
-        gap: 14px;
+        gap: 10px;
       }
 
       .nav-menu a {
-        font-size: 0.70rem;
+        font-size: 0.62rem;
       }
     }
 
     @media (max-width: 900px) {
+      .hero-layout,
+      .chi-grid,
       .orari-wrapper,
       .dove-grid,
       .contatti-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero-info-grid {
-        grid-template-columns: 1fr;
-        max-width: 520px;
+      .hero-photo-wrap {
+        max-width: 620px;
       }
 
       .nav-menu {
@@ -1122,19 +1283,77 @@
 
       #home {
         min-height: auto;
-        padding: 120px 0 76px;
+        padding: 110px 0 72px;
+      }
+
+      .hero-layout {
+        gap: 26px;
+      }
+
+      .hero-title {
+        margin-bottom: 16px;
+      }
+
+      .hero-subtitle {
+        font-size: 0.98rem;
+        margin-bottom: 24px;
+      }
+
+      .oro-divider {
+        margin-bottom: 24px;
+      }
+
+      .hero-info-grid {
+        gap: 10px;
+        margin-bottom: 26px;
+      }
+
+      .hero-info-card {
+        padding: 14px;
       }
 
       .hero-btns {
         flex-direction: column;
+        margin-bottom: 6px;
       }
 
       .hero-btns .btn {
         justify-content: center;
       }
 
-      .hero-info-card {
-        padding: 16px;
+      .hero-photo-wrap {
+        order: 2;
+        margin-top: 6px;
+      }
+
+      .hero-photo-card {
+        border-radius: 18px;
+        padding: 4px;
+        border-width: 1.5px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+      }
+
+      .hero-photo-card img {
+        height: 220px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 14px;
+      }
+
+      .hero-photo-label {
+        display: none;
+      }
+
+      .hero-photo-glow {
+        display: none;
+      }
+
+      .chi-card {
+        padding: 32px 26px;
+      }
+
+      .chi-info-box {
+        padding: 20px;
       }
 
       .recensioni-card {
@@ -1197,6 +1416,7 @@
 
         <ul class="nav-menu">
           <li><a href="#home">Home</a></li>
+          <li><a href="#chi-siamo">Chi siamo</a></li>
           <li><a href="#servizi">Servizi</a></li>
           <li><a href="#orari">Orari</a></li>
           <li><a href="#avvisi">Avvisi</a></li>
@@ -1215,6 +1435,7 @@
 
     <div class="mobile-menu" id="mobile-menu">
       <a href="#home" onclick="chiudiMenu()">Home</a>
+      <a href="#chi-siamo" onclick="chiudiMenu()">Chi siamo</a>
       <a href="#servizi" onclick="chiudiMenu()">Servizi</a>
       <a href="#orari" onclick="chiudiMenu()">Orari</a>
       <a href="#avvisi" onclick="chiudiMenu()">Avvisi</a>
@@ -1226,61 +1447,127 @@
 
   <section id="home">
     <div class="container">
-      <div class="hero-content">
-        <div class="hero-eyebrow">Tabaccheria · Sala Al Barro</div>
+      <div class="hero-layout">
 
-        <h1 class="hero-title">
-          Tabaccheria<br>
-          <span>Di Sala Al Barro</span>
-        </h1>
+        <div class="hero-content">
+          <div class="hero-eyebrow">Tabaccheria · Sala Al Barro</div>
 
-        <div class="oro-divider"></div>
+          <h1 class="hero-title">
+            Tabaccheria<br>
+            <span>Di Sala Al Barro</span>
+          </h1>
 
-        <p class="hero-subtitle">
-          La tua tabaccheria di riferimento a Sala Al Barro.
-          Informazioni rapide su orari, posizione e contatti.
-        </p>
+          <div class="oro-divider"></div>
 
-        <div class="hero-info-grid">
-          <div class="hero-info-card">
-            <div class="hero-info-icon">🕐</div>
-            <div class="hero-info-text">
-              <small>Orari</small>
-              <strong>Aperta dal lunedì al sabato</strong>
+          <p class="hero-subtitle">
+            La tua tabaccheria di riferimento a Sala Al Barro.
+            Informazioni rapide su orari, posizione e contatti.
+          </p>
+
+          <div class="hero-info-grid">
+            <div class="hero-info-card">
+              <div class="hero-info-icon">🕐</div>
+              <div class="hero-info-text">
+                <small>Orari</small>
+                <strong>Aperta dal lunedì al sabato</strong>
+              </div>
+            </div>
+
+            <div class="hero-info-card">
+              <div class="hero-info-icon">📍</div>
+              <div class="hero-info-text">
+                <small>Indirizzo</small>
+                <strong>Via Pedro Vasena, 9</strong>
+              </div>
+            </div>
+
+            <div class="hero-info-card">
+              <div class="hero-info-icon">📞</div>
+              <div class="hero-info-text">
+                <small>Telefono</small>
+                <strong>0341 081356</strong>
+              </div>
             </div>
           </div>
 
-          <div class="hero-info-card">
-            <div class="hero-info-icon">📍</div>
-            <div class="hero-info-text">
-              <small>Indirizzo</small>
-              <strong>Via Pedro Vasena, 9</strong>
+          <div class="hero-btns">
+            <a href="tel:0341081356" class="btn btn-oro">
+              📞 Chiama ora
+            </a>
+
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Via+Pedro+Vasena+9+23851+Sala+Al+Barro+LC"
+               target="_blank" rel="noopener" class="btn btn-outline">
+              🗺️ Indicazioni
+            </a>
+
+            <a href="#orari" class="btn btn-outline">
+              🕐 Vedi orari
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-photo-wrap">
+          <div class="hero-photo-glow"></div>
+
+          <div class="hero-photo-card">
+            <img src="tabaccheria-foto.png" alt="Esterno della Tabaccheria Di Sala Al Barro">
+            <div class="hero-photo-label">📍 Sala Al Barro</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="chi-siamo">
+    <div class="container">
+      <div class="chi-grid">
+
+        <div class="chi-card reveal">
+          <p class="section-eyebrow">Chi siamo</p>
+          <h2 class="section-title">Una realtà locale a Sala Al Barro</h2>
+
+          <p>
+            La Tabaccheria Di Sala Al Barro è un punto di riferimento per chi cerca informazioni rapide su orari,
+            posizione, contatti e servizi disponibili in negozio.
+          </p>
+
+          <p>
+            Questo sito nasce per rendere più semplice trovare la tabaccheria online, raggiungerla tramite Google Maps
+            e consultare le informazioni principali in modo chiaro anche da telefono.
+          </p>
+
+          <div class="chi-note">
+            Sito informativo: servizi, orari e disponibilità sono sempre da verificare direttamente con la tabaccheria.
+          </div>
+        </div>
+
+        <div class="chi-info-grid">
+          <div class="chi-info-box reveal reveal-delay-1">
+            <div class="chi-info-icon">🏘️</div>
+            <div>
+              <h4>Attività locale</h4>
+              <p>Una presenza nel paese pensata per offrire informazioni utili ai clienti della zona.</p>
             </div>
           </div>
 
-          <div class="hero-info-card">
-            <div class="hero-info-icon">📞</div>
-            <div class="hero-info-text">
-              <small>Telefono</small>
-              <strong>0341 081356</strong>
+          <div class="chi-info-box reveal reveal-delay-2">
+            <div class="chi-info-icon">📍</div>
+            <div>
+              <h4>Posizione facile da trovare</h4>
+              <p>Indirizzo, mappa interattiva e pulsante indicazioni per raggiungere subito il punto vendita.</p>
+            </div>
+          </div>
+
+          <div class="chi-info-box reveal reveal-delay-3">
+            <div class="chi-info-icon">📞</div>
+            <div>
+              <h4>Contatto diretto</h4>
+              <p>Un sito semplice per chiamare, controllare gli orari e leggere eventuali comunicazioni importanti.</p>
             </div>
           </div>
         </div>
 
-        <div class="hero-btns">
-          <a href="tel:0341081356" class="btn btn-oro">
-            📞 Chiama ora
-          </a>
-
-          <a href="https://www.google.com/maps/dir/?api=1&destination=Via+Pedro+Vasena+9+23851+Sala+Al+Barro+LC"
-             target="_blank" rel="noopener" class="btn btn-outline">
-            🗺️ Indicazioni
-          </a>
-
-          <a href="#orari" class="btn btn-outline">
-            🕐 Vedi orari
-          </a>
-        </div>
       </div>
     </div>
   </section>
@@ -1297,7 +1584,6 @@
       </div>
 
       <div class="servizi-grid">
-
         <div class="card-servizio reveal reveal-delay-1">
           <div class="card-icon">🚬</div>
           <h3>Tabacchi</h3>
@@ -1345,7 +1631,6 @@
           <h3>Articoli vari</h3>
           <p>Articoli di uso comune e prodotti disponibili direttamente in negozio.</p>
         </div>
-
       </div>
 
       <p class="nota-servizi reveal">
@@ -1357,7 +1642,6 @@
   <section id="orari">
     <div class="container">
       <div class="orari-wrapper">
-
         <div>
           <div class="section-header reveal" style="margin-bottom:28px;">
             <p class="section-eyebrow">Quando siamo aperti</p>
@@ -1452,7 +1736,6 @@
             📞 Chiama per confermare
           </a>
         </div>
-
       </div>
     </div>
   </section>
@@ -1525,7 +1808,6 @@
       </div>
 
       <div class="dove-grid">
-
         <div class="mappa-embed reveal">
           <iframe
             title="Mappa Google Maps - Tabaccheria Di Sala Al Barro"
@@ -1537,7 +1819,6 @@
         </div>
 
         <div class="indirizzo-card reveal">
-
           <div class="indirizzo-row">
             <div class="ind-icon">📍</div>
             <div class="ind-text">
@@ -1576,7 +1857,6 @@
               📞 Chiama
             </a>
           </div>
-
         </div>
       </div>
     </div>
@@ -1585,7 +1865,6 @@
   <section id="contatti">
     <div class="container">
       <div class="contatti-grid">
-
         <div>
           <p class="section-eyebrow">Hai bisogno di informazioni?</p>
           <h2 class="section-title reveal" style="color:var(--bianco);">
@@ -1616,7 +1895,6 @@
             </a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -1626,7 +1904,7 @@
       <div class="footer-logo">Tabaccheria Di Sala Al Barro</div>
       <div class="footer-line"></div>
       <p class="footer-copy">© 2026 Tabaccheria Di Sala Al Barro — Sito dimostrativo</p>
-      <p class="footer-nota">Questo sito è un prototipo grafico non ufficiale.</p>
+      <p class="footer-nota">Questo sito è un prototipo grafico non ufficiale. Orari e servizi da verificare direttamente con la tabaccheria.</p>
     </div>
   </footer>
 
